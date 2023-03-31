@@ -1,0 +1,149 @@
+
+RAxML can't, parse the alignment file as phylip file 
+it will now try to parse it as FASTA file
+
+
+
+IMPORTANT WARNING: Sequences KT383474 and MP872414 are exactly identical
+
+
+IMPORTANT WARNING: Sequences KT383474 and MP875816 are exactly identical
+
+
+IMPORTANT WARNING: Sequences MN882030 and MN882031 are exactly identical
+
+
+IMPORTANT WARNING: Sequences MN882030 and MN882032 are exactly identical
+
+
+IMPORTANT WARNING: Sequences MN882033 and MW314093 are exactly identical
+
+
+IMPORTANT WARNING: Sequences MP872415 and MP875817 are exactly identical
+
+
+IMPORTANT WARNING: Sequences MN882054 and MN882056 are exactly identical
+
+
+IMPORTANT WARNING: Sequences MN882024 and MN882034 are exactly identical
+
+
+IMPORTANT WARNING: Sequences OM515249 and OM515251 are exactly identical
+
+
+IMPORTANT WARNING: Sequences OM515249 and OM515252 are exactly identical
+
+
+IMPORTANT WARNING: Sequences OM515253 and OM515255 are exactly identical
+
+IMPORTANT WARNING
+Found 11 sequences that are exactly identical to other sequences in the alignment.
+Normally they should be excluded from the analysis.
+
+Just in case you might need it, an alignment file with 
+sequence duplicates removed is printed to file results/aligned.fasta.reduced
+
+
+Using BFGS method to optimize GTR rate parameters, to disable this specify "--no-bfgs" 
+
+
+This is the RAxML Master Pthread
+
+This is RAxML Worker Pthread Number: 1
+
+This is RAxML Worker Pthread Number: 2
+
+This is RAxML Worker Pthread Number: 3
+
+This is RAxML Worker Pthread Number: 4
+
+This is RAxML Worker Pthread Number: 5
+
+This is RAxML Worker Pthread Number: 6
+
+This is RAxML Worker Pthread Number: 7
+
+This is RAxML Worker Pthread Number: 8
+
+This is RAxML Worker Pthread Number: 9
+
+This is RAxML Worker Pthread Number: 10
+
+This is RAxML Worker Pthread Number: 12
+
+This is RAxML Worker Pthread Number: 11
+
+This is RAxML Worker Pthread Number: 13
+
+This is RAxML Worker Pthread Number: 14
+
+This is RAxML Worker Pthread Number: 15
+
+
+This is RAxML version 8.2.12 released by Alexandros Stamatakis on May 2018.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+Alignment has 399 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 1.98%
+
+RAxML rapid hill-climbing mode
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+Executing 1 inferences on the original alignment using 1 distinct randomized MP trees
+
+All free model parameters will be estimated by RAxML
+ML estimate of 25 per site rate categories
+
+Likelihood of final tree will be evaluated and optimized under GAMMA
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 399
+Name: No Name Provided
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+
+RAxML was called as follows:
+
+raxmlHPC-PTHREADS-AVX2 -T 16 -f d -m GTRCAT -c 25 -p 235813 -n 5dbb58 -s results/aligned.fasta 
+
+
+Partition: 0 with name: No Name Provided
+Base frequencies: 0.304 0.185 0.230 0.281 
+
+Inference[0]: Time 12.066281 CAT-based likelihood -11901.294376, best rearrangement setting 5
+
+
+Conducting final model optimizations on all 1 trees under GAMMA-based models ....
+
+Inference[0] final GAMMA-based Likelihood: -13275.538290 tree written to file /home/Bart/Documents/ToBRFV/20220412_v3_NoComp/RAxML_result.5dbb58
+
+
+Starting final GAMMA-based thorough Optimization on tree 0 likelihood -13275.538290 .... 
+
+Final GAMMA-based Score of best tree -13275.464136
+
+Program execution info written to /home/Bart/Documents/ToBRFV/20220412_v3_NoComp/RAxML_info.5dbb58
+Best-scoring ML tree written to: /home/Bart/Documents/ToBRFV/20220412_v3_NoComp/RAxML_bestTree.5dbb58
+
+Overall execution time: 14.523150 secs or 0.004034 hours or 0.000168 days
+

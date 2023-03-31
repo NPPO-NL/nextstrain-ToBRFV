@@ -1,14 +1,12 @@
 rule all:
     input:
-        auspice_tree = "auspice/ToBRFV_tree.json",
-        auspice_meta = "auspice/ToBRFV_meta.json"
+        auspice = "auspice/ToBRFV_20220412.json"
 
-input_fasta = "data/ToBRFV_20191230.fa",
-input_metadata = "data/meta_ToBRFV_20191230.tsv",
-# dropped_strains = "config/dropped_strains.txt",
+input_fasta = "data/ToBRFV_20220412.fa",
+input_metadata = "data/meta_ToBRFV_20220412.tsv",
 reference = "config/KT383474_NCBI-edit.gb",
-#colors = "config/colors.tsv",
 lat_longs = "config/lat_longs.tsv",
+description = "config/description.md",
 auspice_config = "config/auspice_config.json"
 
 #rule filter:
@@ -116,7 +114,8 @@ rule traits:
     output:
         traits = "results/traits.json"
     params:
-        columns = "region country pathotype avrsen1"
+        columns = "continent country state municipality host"
+
     shell:
         """
         augur traits \
@@ -142,7 +141,7 @@ rule ancestral:
         augur ancestral \
             --tree {input.tree} \
             --alignment {input.alignment} \
-            --output {output.node_data} \
+            --output-node-data {output.node_data} \
             --output-sequences {output.sequences}\
             --inference {params.inference}
         """
@@ -173,20 +172,19 @@ rule export:
         traits = rules.traits.output.traits,
         nt_muts = rules.ancestral.output.node_data,
         aa_muts = rules.translate.output.node_data,
-        #colors = colors,
+        description = description,
         lat_longs = lat_longs,
         auspice_config = auspice_config
     output:
-        auspice_tree = rules.all.input.auspice_tree,
-        auspice_meta = rules.all.input.auspice_meta
+        auspice = rules.all.input.auspice,
     shell:
         """
-        augur export v1 \
+        augur export v2 \
             --tree {input.tree} \
             --metadata {input.metadata} \
             --node-data {input.branch_lengths} {input.traits} {input.nt_muts} {input.aa_muts} \
             --lat-longs {input.lat_longs} \
             --auspice-config {input.auspice_config} \
-            --output-tree {output.auspice_tree} \
-            --output-meta {output.auspice_meta}
+            --description {input.description} \
+            --output {output.auspice} \
         """

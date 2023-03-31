@@ -1,5 +1,5 @@
 {
-  "title": "Real-time tracking of Tomato brown rugose fruit virus (ToBRFV) outbreaks using Nextstrain",
+  "title": "Real-time tracking of Tomato brown rugose fruit virus (ToBRFV) outbreaks using Nextstrain (v3)",
   "color_options": {
     "gt": {
       "menuItem": "genotype",
@@ -19,10 +19,10 @@
       "menuItem": "host",
       "type": "discrete"
     },
-    "company_type": {
-      "legendTitle": "Company type",
-      "key": "company_type",
-      "menuItem": "company_type",
+	"clade": {
+      "legendTitle": "Clade",
+      "key": "clade",
+      "menuItem": "clade",
       "type": "discrete"
     },
     "sampled": {
@@ -31,23 +31,26 @@
       "menuItem": "sampled",
       "type": "discrete"
     },
-    "scion": {
-      "legendTitle": "Scion",
-      "key": "scion",
-      "menuItem": "scion",
+    "seed_origin_scion": {
+      "legendTitle": "seed_origin_scion",
+      "key": "seed_origin_scion",
+      "menuItem": "seed_origin_scion",
       "type": "discrete"
     },
-    "stock": {
-      "legendTitle": "Rootstock",
-      "key": "stock",
-      "menuItem": "stock",
+	"seed_origin_stock": {
+      "legendTitle": "seed_origin_stock",
+      "key": "seed_origin_stock",
+      "menuItem": "seed_origin_stock",
       "type": "discrete"
     },
-    "major_genotype": {
-      "legendTitle": "Frequency major genotype",
-      "key": "major_genotype",
-      "menuItem": "major_genotype",
-      "type": "continuous"
+    "isolate": {
+      "legendTitle": "isolate",
+      "key": "isolate",
+      "menuItem": "isolate",
+      "type": "discrete"
+    },
+
+    "continent": {
     },
     "country": {
     }
@@ -68,15 +71,18 @@
   },
   "maintainer": [
     "Bart T.L.H. van de Vossenberg and Michael Visser",
-    "https://www.nvwa.nl/onderwerpen/plantenziekten-en-plagen/tomato-brown-rugose-fruit-virus-tobrfv"
+    "https://english.nvwa.nl/topics/national-plant-protection-organization-nppo"
   ],
   "filters": [
-    "country",
-    "host",
-    "company_type",
-    "sampled",
-    "scion",
-    "stock",
-    "authors"
+   "continent",
+   "country",
+	 "municipality",
+	 "clade",
+   "host",
+   "sampled",
+   "isolate",
+   "subsample",
+   "seed_origin_scion",
+	 "seed_origin_stock"
   ]
 }
