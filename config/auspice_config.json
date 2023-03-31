@@ -1,0 +1,82 @@
+{
+  "title": "Real-time tracking of Tomato brown rugose fruit virus (ToBRFV) outbreaks using Nextstrain",
+  "color_options": {
+    "gt": {
+      "menuItem": "genotype",
+      "legendTitle": "Genotype",
+      "type": "discrete",
+      "key": "genotype"
+    },
+    "num_date": {
+      "menuItem": "date",
+      "legendTitle": "Sampling date",
+      "type": "continuous",
+      "key": "num_date"
+    },
+    "host": {
+      "legendTitle": "Host",
+      "key": "host",
+      "menuItem": "host",
+      "type": "discrete"
+    },
+    "company_type": {
+      "legendTitle": "Company type",
+      "key": "company_type",
+      "menuItem": "company_type",
+      "type": "discrete"
+    },
+    "sampled": {
+      "legendTitle": "Plant organ sampled",
+      "key": "sampled",
+      "menuItem": "sampled",
+      "type": "discrete"
+    },
+    "scion": {
+      "legendTitle": "Scion",
+      "key": "scion",
+      "menuItem": "scion",
+      "type": "discrete"
+    },
+    "stock": {
+      "legendTitle": "Rootstock",
+      "key": "stock",
+      "menuItem": "stock",
+      "type": "discrete"
+    },
+    "major_genotype": {
+      "legendTitle": "Frequency major genotype",
+      "key": "major_genotype",
+      "menuItem": "major_genotype",
+      "type": "continuous"
+    },
+    "country": {
+    }
+  },
+  "geo": [
+    "continent",
+    "country",
+    "state",
+    "municipality"
+  ],
+  "panels":[
+    "tree",
+    "map",
+    "entropy"
+  ],
+  "defaults": {
+    "mapTriplicate": true
+  },
+  "maintainer": [
+    "Bart T.L.H. van de Vossenberg and Michael Visser",
+    "https://www.nvwa.nl/onderwerpen/plantenziekten-en-plagen/tomato-brown-rugose-fruit-virus-tobrfv"
+  ],
+  "filters": [
+    "country",
+    "host",
+    "company_type",
+    "sampled",
+    "scion",
+    "stock",
+    "authors"
+  ]
+}

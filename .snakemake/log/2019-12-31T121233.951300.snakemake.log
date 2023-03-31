@@ -1,0 +1,67 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	align
+	1	all
+	1	ancestral
+	1	export
+	1	refine
+	1	traits
+	1	translate
+	1	tree
+	8
+
+[Tue Dec 31 12:12:33 2019]
+Job 7: 
+        Aligning sequences to data/ToBRFV_20191230.fa
+          - filling gaps with N
+        
+
+[Tue Dec 31 12:12:36 2019]
+Finished job 7.
+1 of 8 steps (12%) done
+
+[Tue Dec 31 12:12:36 2019]
+Job 6: Building tree
+
+[Tue Dec 31 12:12:40 2019]
+Finished job 6.
+2 of 8 steps (25%) done
+
+[Tue Dec 31 12:12:40 2019]
+Job 2: 
+        Refining tree
+          - estimate timetree
+          - use opt coalescent timescale
+          - estimate marginal node dates
+        
+
+[Tue Dec 31 12:13:52 2019]
+Finished job 2.
+3 of 8 steps (38%) done
+
+[Tue Dec 31 12:13:52 2019]
+Job 4: Reconstructing ancestral sequences and mutations
+
+[Tue Dec 31 12:13:55 2019]
+Finished job 4.
+4 of 8 steps (50%) done
+
+[Tue Dec 31 12:13:55 2019]
+Job 5: Translating amino acid sequences
+
+[Tue Dec 31 12:13:56 2019]
+Error in rule translate:
+    jobid: 5
+    output: results/aa_muts.json
+    shell:
+        
+        augur translate             --tree results/refined_tree.nwk             --ancestral-sequences results/nt_muts.json             --reference-sequence config/KT383474.gff             --output results/aa_muts.json         
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/Michael/nextstrain_builds/ToBRFV/20191230/.snakemake/log/2019-12-31T121233.951300.snakemake.log

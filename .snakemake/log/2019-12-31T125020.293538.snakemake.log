@@ -1,0 +1,82 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	align
+	1	all
+	1	ancestral
+	1	export
+	1	refine
+	1	traits
+	1	translate
+	1	tree
+	8
+
+[Tue Dec 31 12:50:20 2019]
+Job 7: 
+        Aligning sequences to data/ToBRFV_20191230.fa
+          - filling gaps with N
+        
+
+[Tue Dec 31 12:50:23 2019]
+Finished job 7.
+1 of 8 steps (12%) done
+
+[Tue Dec 31 12:50:23 2019]
+Job 6: Building tree
+
+[Tue Dec 31 12:50:27 2019]
+Finished job 6.
+2 of 8 steps (25%) done
+
+[Tue Dec 31 12:50:27 2019]
+Job 2: 
+        Refining tree
+          - estimate timetree
+          - use opt coalescent timescale
+          - estimate marginal node dates
+        
+
+[Tue Dec 31 12:51:39 2019]
+Finished job 2.
+3 of 8 steps (38%) done
+
+[Tue Dec 31 12:51:39 2019]
+Job 4: Reconstructing ancestral sequences and mutations
+
+[Tue Dec 31 12:51:41 2019]
+Finished job 4.
+4 of 8 steps (50%) done
+
+[Tue Dec 31 12:51:41 2019]
+Job 5: Translating amino acid sequences
+
+[Tue Dec 31 12:51:43 2019]
+Finished job 5.
+5 of 8 steps (62%) done
+
+[Tue Dec 31 12:51:43 2019]
+Job 3: Infer ancestral traits from an existing phylogenetic tree and the metadata annotating each tip of the tree
+
+[Tue Dec 31 12:51:44 2019]
+Finished job 3.
+6 of 8 steps (75%) done
+
+[Tue Dec 31 12:51:44 2019]
+Job 1: Exporting data files fo auspice
+
+[Tue Dec 31 12:51:46 2019]
+Finished job 1.
+7 of 8 steps (88%) done
+
+[Tue Dec 31 12:51:46 2019]
+localrule all:
+    input: auspice/ToBRFV_tree.json, auspice/ToBRFV_meta.json
+    jobid: 0
+
+[Tue Dec 31 12:51:46 2019]
+Finished job 0.
+8 of 8 steps (100%) done
+Complete log: /home/Michael/nextstrain_builds/ToBRFV/20191230/.snakemake/log/2019-12-31T125020.293538.snakemake.log
