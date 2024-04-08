@@ -10,7 +10,7 @@ Sharing data with this interactive online tool will enable the plant virology fi
 
 
 ### Contribute to the build
-The reliability of a track and trace tool depends on sampling and metadata completeness. You can contribute to the build by providing plant materials, RNA or assembled (near) complete ToBRFV sequences together with relevant metadata to the National Reference Centre for Plant Health (NRC), which is part of the Netherlands Food and Consumer Safety Authority [(NVWA)](https://english.nvwa.nl). On the NVWA website, a generic [form](https://formdesk.minlnv.nl/kcdv/nvwa-vragen-eng-v1/?def_standaard=1&get=1&sidn=f250522339034dbe9ec8a2b134ee170e) is available to get in touch in case you'd like to contribute to the build.
+The reliability of a track and trace tool depends on sampling and metadata completeness. You can contribute to the build by providing plant materials, RNA or assembled (near) complete ToBRFV sequences together with relevant metadata to the Netherlands Institute for Vectors, Invasive plants and Plant health (NIVIP) (formerly: National Reference Centre for Plant Health, which is part of the Netherlands Food and Consumer Safety Authority [(NVWA)](https://english.nvwa.nl). On the NVWA website, a generic [form](https://english.nvwa.nl/about-us/contact) is available to get in touch in case you'd like to contribute to the build.
 
 
 ### Versions
@@ -27,10 +27,15 @@ Shows 118 genomic sequences from 15 countries from materials sampled between Nov
 
 Shows 179 genomic sequences from 16 countries from materials sampled between November 2014 and November 2021. The third version of the Nextstrain build was created with Augur export v2. A rapid expansion of clade 7 samples were observed.
 
+[**5 February 2024**](https://nextstrain.nrcnvwa.nl/ToBRFV/20240205)
+Shows 336 genomic sequences from 23 countries from materials sampled between November 2014 and December 2023.
+
+
 ### How to cite
 For each update a resource announcement is published. When referring to a certain ToBRFV build, please cite the original paper, and the relevant resource announcement.
 
  - *van de Vossenberg BTLH et al. [(2020)](https://doi.org/10.1371/journal.pone.0234671) Real-time tracking of Tomato brown rugose fruit virus (ToBRFV) outbreaks in the Netherlands using Nextstrain. PLoS ONE 15(10)* 
  - *van de Vossenberg BTLH et al. [(2021)](https://doi.org/10.1094/PHYTOFR-01-21-0005-A) First expansion of the public Tomato brown rugose fruit virus (ToBRFV) Nextstrain build; inclusion of new genomic and epidemiological data*
- - *Botermans M (2022) et al. Tomato brown rugose fruit virus (ToBRFV) Nextstrain build v3; the rise of a novel clade (in preparation)*
+ - *Botermans M  et al. [(2023)](https://doi.org/10.1094/PHYTOFR-09-22-0090-A) Tomato brown rugose fruit virus (ToBRFV) Nextstrain build v3; the rise of a novel clade*
+ - *De Koning PPM et al. [2024]Tomato brown rugose fruit virus (ToBRFV) Nextstrain build v4 (in prep.)*
 

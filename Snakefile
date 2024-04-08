@@ -1,10 +1,11 @@
 rule all:
     input:
-        auspice = "auspice/ToBRFV_20220412.json"
+        auspice = "auspice/ToBRFV_20240205.json"
 
-input_fasta = "data/ToBRFV_20220412.fa",
-input_metadata = "data/meta_ToBRFV_20220412.tsv",
+input_fasta = "data/ToBRFV_20240205.fa",
+input_metadata = "data/meta_ToBRFV_20240205.tsv",
 reference = "config/KT383474_NCBI-edit.gb",
+colors = "config/colors.tsv",
 lat_longs = "config/lat_longs.tsv",
 description = "config/description.md",
 auspice_config = "config/auspice_config.json"
@@ -174,6 +175,7 @@ rule export:
         aa_muts = rules.translate.output.node_data,
         description = description,
         lat_longs = lat_longs,
+        colors= colors,
         auspice_config = auspice_config
     output:
         auspice = rules.all.input.auspice,
@@ -184,6 +186,7 @@ rule export:
             --metadata {input.metadata} \
             --node-data {input.branch_lengths} {input.traits} {input.nt_muts} {input.aa_muts} \
             --lat-longs {input.lat_longs} \
+            --colors {input.colors} \
             --auspice-config {input.auspice_config} \
             --description {input.description} \
             --output {output.auspice} \

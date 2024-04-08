@@ -1,5 +1,5 @@
 {
-  "title": "Real-time tracking of Tomato brown rugose fruit virus (ToBRFV) outbreaks using Nextstrain (v3)",
+  "title": "Real-time tracking of Tomato brown rugose fruit virus (ToBRFV) outbreaks using Nextstrain (v4)",
   "color_options": {
     "gt": {
       "menuItem": "genotype",
@@ -70,7 +70,7 @@
     "mapTriplicate": true
   },
   "maintainer": [
-    "Bart T.L.H. van de Vossenberg and Michael Visser",
+    "Pier P.M. de Koning, Bart T.L.H. van de Vossenberg and Michael Visser",
     "https://english.nvwa.nl/topics/national-plant-protection-organization-nppo"
   ],
   "filters": [
