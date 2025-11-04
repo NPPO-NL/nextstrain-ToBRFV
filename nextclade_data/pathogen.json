@@ -4,11 +4,14 @@
     "reference": "KT383474.fasta",
     "pathogenJson": "pathogen.json",
     "genomeAnnotation": "KT383474.gff",
+    "examples": "sequences.fasta",
+    "readme": "README.md",
+    "changelog": "CHANGELOG.md",
     "treeJson": "ToBRFV_20250804.json"
   },
   "attributes": {
     "name": "ToBRFV",
-    "reference name": "Tom1-Jo",
+    "reference name": "Tomato brown rugose fruit virus",
     "reference accession": "KT383474.1"
   },
   "qc": {
