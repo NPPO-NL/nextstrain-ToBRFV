@@ -1,0 +1,7 @@
+##gff-version 3
+##sequence-region	KT383474	1	6117
+KT383474	RefSeq	region	1	6117	.	+	.	ID=KT383474.1:1..6117;Dbxref=taxon:1761477;collection-date=17-Apr-2015;country=Jordan;gbkey=Src;genome=genomic;isolate=Tom1-Jo;mol_type=genomic RNA;nat-host=tomato%3B cultivar%3DCandela
+KT383474	RefSeq	CDS	1	4848	.	+	.	Name=RdRp;gbkey=Prot;protein_id=ALP48476.1;ID=id-ALP48476.1:1..1616;product=RdRp
+KT383474	RefSeq	CDS	1	3351	.	+	.	Name=replicase;gbkey=Prot;protein_id=ALP48477.1;ID=id-ALP48477.1:1..1116;product=126 kDa replicase
+KT383474	RefSeq	CDS	4835	5635	.	+	.	Name=MP;gbkey=Prot;protein_id=ALP48478.1;ID=id-ALP48478.1:1..266;product=30 kDa movement protein
+KT383474	RefSeq	CDS	5638	6117	.	+	.	Name=CP;gbkey=Prot;protein_id=ALP48479.1;ID=id-ALP48479.1:1..159;product=17.5 kDa coat protein

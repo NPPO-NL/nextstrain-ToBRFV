@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "3.0.0",
+  "files": {
+    "reference": "KT383474.fasta",
+    "pathogenJson": "pathogen.json",
+    "genomeAnnotation": "KT383474.gff",
+    "treeJson": "ToBRFV_20250804.json"
+  },
+  "attributes": {
+    "name": "ToBRFV",
+    "reference name": "Tom1-Jo",
+    "reference accession": "KT383474.1"
+  },
+  "qc": {
+    "schemaVersion": "1.2.0",
+    "missingData": {
+      "enabled": true,
+      "missingDataThreshold": 1,
+      "scoreBias": 1,
+      "scoreWeight": 100
+    },
+    "snpClusters": {
+      "enabled": true,
+      "windowSize": 100,
+      "clusterCutOff": 6,
+      "scoreWeight": 50
+    },
+    "mixedSites": {
+      "enabled": true,
+      "mixedSitesThreshold": 1,
+      "scoreWeight": 50
+    },
+    "frameShifts": {
+      "enabled": true,
+      "scoreWeight": 100
+    },
+    "stopCodons": {
+      "enabled": true,
+      "scoreWeight": 100,
+      "ignoredStopCodons": [
+        {
+          "codon": 1116,
+          "cdsName": "RdRp"
+        }
+      ]
+    }
+  }
+}
