@@ -1,88 +1,88 @@
 {
-  "title": "Real-time tracking of Tomato brown rugose fruit virus (ToBRFV) outbreaks using Nextstrain (v4)",
-  "color_options": {
-    "gt": {
-      "menuItem": "genotype",
-      "legendTitle": "Genotype",
-      "type": "discrete",
-      "key": "genotype"
-    },
-    "num_date": {
-      "menuItem": "date",
-      "legendTitle": "Sampling date",
-      "type": "continuous",
-      "key": "num_date"
-    },
-    "host": {
-      "legendTitle": "Host",
-      "key": "host",
-      "menuItem": "host",
-      "type": "discrete"
-    },
-	"clade": {
-      "legendTitle": "Clade",
-      "key": "clade",
-      "menuItem": "clade",
-      "type": "discrete"
-    },
-    "sampled": {
-      "legendTitle": "Plant organ sampled",
-      "key": "sampled",
-      "menuItem": "sampled",
-      "type": "discrete"
-    },
-    "seed_origin_scion": {
-      "legendTitle": "seed_origin_scion",
-      "key": "seed_origin_scion",
-      "menuItem": "seed_origin_scion",
-      "type": "discrete"
-    },
-	"seed_origin_stock": {
-      "legendTitle": "seed_origin_stock",
-      "key": "seed_origin_stock",
-      "menuItem": "seed_origin_stock",
-      "type": "discrete"
-    },
-    "isolate": {
-      "legendTitle": "isolate",
-      "key": "isolate",
-      "menuItem": "isolate",
-      "type": "discrete"
-    },
-
-    "continent": {
-    },
-    "country": {
+  "title": "Real-time tracking of Tomato brown rugose fruit virus (ToBRFV) outbreaks using Nextstrain (v5)",
+  "maintainers": [
+    {
+      "name": "Pier P.M. de Koning, Bart T.L.H. van de Vossenberg en Michael Visser",
+      "url": "https://english.nvwa.nl/topics/national-plant-protection-organization-nppo"
     }
+  ],
+  "display_defaults": {
+    "map_triplicate": true,
+    "color_by": "country",
+    "transmission_lines": true,
+    "geo_resolution": "country"
   },
-  "geo": [
+  "colorings": [
+    {
+      "key": "confidence",
+      "title": "Confidence",
+      "type": "continuous"
+    },
+    {
+      "key": "country",
+      "title": "Country",
+      "type": "categorical"
+    },
+    {
+      "key": "genotype",
+      "title": "Genotype",
+      "type": "categorical"
+    },
+    {
+      "key": "num_date",
+      "title": "Sampling date",
+      "type": "continuous"
+    },
+    {
+      "key": "host",
+      "title": "Host",
+      "type": "categorical"
+    },
+    {
+      "key": "sampled",
+      "title": "Plant tissue sampled",
+      "type": "categorical"
+    },
+    {
+      "key": "isolate",
+      "title": "Isolate",
+      "type": "categorical"
+    },
+    {
+      "key": "continent",
+      "title": "Continent",
+      "type": "categorical"
+    },
+    {
+      "key": "state",
+      "title": "State",
+      "type": "categorical"
+    },
+    {
+      "key": "municipality",
+      "title": "Municipality",
+      "type": "categorical"
+    }
+  ],
+  "geo_resolutions": [
     "continent",
     "country",
     "state",
     "municipality"
   ],
-  "panels":[
+  "panels": [
     "tree",
     "map",
     "entropy"
   ],
-  "defaults": {
-    "mapTriplicate": true
-  },
-  "maintainer": [
-    "Pier P.M. de Koning, Bart T.L.H. van de Vossenberg and Michael Visser",
-    "https://english.nvwa.nl/topics/national-plant-protection-organization-nppo"
-  ],
   "filters": [
-   "continent",
-   "country",
-	 "municipality",
-	 "clade",
-   "host",
-   "sampled",
-   "isolate",
-   "subsample",
-   "seed_origin_scion",
-	 "seed_origin_stock"
+    "continent",
+    "country",
+    "municipality",
+    "host",
+    "sampled",
+    "isolate",
+    "subsample"
   ]
 }
+

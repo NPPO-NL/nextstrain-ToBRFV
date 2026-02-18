@@ -29,6 +29,14 @@ country	iran	32.462655	54.437853
 country	hungary	47.414431	19.894431
 country	spain	40.421980	-2.716017
 country	morocco	32.306427	-6.374488
+country	fiji	-17.773538	177.974226
+country	pakistan	29.628162	68.849368
+country	uzbekistan	41.786639	63.741808
+country	senegal	14.613082	-14.115040
+country	jersey	49.218871	-2.125489
+country	argentina	-37.561859	-64.953891
+country	colombia	4.675152	-73.567171
+country	albania	41.245707	20.157187
 state	antalya	36.5493620	31.9969940
 state	baja_california	30.1590560	-115.2122260
 state	california	37.8490330	-120.9008960
@@ -53,6 +61,7 @@ state	famagusta	35.207955	33.739989
 state	friesland	53.130832	5.882303
 state	overijssel	52.442462	6.482846
 state	northern_england	54.363332	-1.971581
+state	central_macedonia	40.821545	23.016510
 municipality	birchington-on-sea	51.3774248	1.3013552
 municipality	lansingerland	52.0061440	4.5083750
 municipality	haarlemmermeer	52.3129180	4.6903890
@@ -80,3 +89,4 @@ municipality	kampen	52.587274	5.887574
 municipality	heusden	51.727137	5.157557
 municipality	aalsmeer	52.270688	4.772927
 municipality	enkhuizen	52.715217	5.273037
+municipality	pella	40.769834	22.524134

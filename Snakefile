@@ -1,14 +1,15 @@
 rule all:
     input:
-        auspice = "auspice/ToBRFV_20240205.json"
+        auspice = "auspice/ToBRFV_20250804-internal.json"
 
-input_fasta = "data/ToBRFV_20240205.fa",
-input_metadata = "data/meta_ToBRFV_20240205.tsv",
+input_fasta = "data/ToBRFV_20250804.fa",
+input_metadata = "data/meta_ToBRFV_20250804.tsv",
 reference = "config/KT383474_NCBI-edit.gb",
 colors = "config/colors.tsv",
 lat_longs = "config/lat_longs.tsv",
 description = "config/description.md",
 auspice_config = "config/auspice_config.json"
+clades = "config/clades.tsv"
 
 #rule filter:
 #    message:
@@ -47,7 +48,8 @@ rule align:
           - filling gaps with N
         """
     input:
-        sequences = input_fasta
+        sequences = input_fasta,
+        reference = reference
     output:
         alignment = "results/aligned.fasta"
     shell:
@@ -56,7 +58,9 @@ rule align:
             --sequences {input.sequences} \
             --output {output.alignment} \
             --method mafft \
-            --nthreads auto
+            --nthreads auto \
+            --reference-sequence {input.reference} \
+            --fill-gaps
         """
 
 rule tree:
@@ -69,10 +73,12 @@ rule tree:
         """
         augur tree \
             --alignment {input.alignment} \
-            --method raxml \
+            --method iqtree \
             --output {output.tree}\
             --substitution-model GTR \
-            --nthreads auto
+            --nthreads auto\
+            --override-default-args \
+            --tree-builder-args "-ninit 2 -me 0.05 -redo -B 1000"
         """
 
 rule refine:
@@ -104,7 +110,8 @@ rule refine:
             --timetree \
             --coalescent {params.coalescent} \
             --date-confidence \
-            --date-inference {params.date_inference}
+            --date-inference {params.date_inference} \
+            --stochastic-resolve
         """
 
 rule traits:
@@ -115,7 +122,7 @@ rule traits:
     output:
         traits = "results/traits.json"
     params:
-        columns = "continent country state municipality host"
+        columns = "continent country state municipality host",
 
     shell:
         """
@@ -124,14 +131,15 @@ rule traits:
         --metadata {input.metadata} \
         --output {output.traits} \
         --columns {params.columns}\
-        --confidence
+        --confidence \
         """
 
 rule ancestral:
     message: "Reconstructing ancestral sequences and mutations"
     input:
         tree = rules.refine.output.tree,
-        alignment = rules.align.output.alignment
+        alignment = rules.align.output.alignment,
+        reference = reference,
     output:
         node_data = "results/nt_muts.json",
         sequences = "results/nucleotide-mutations.fasta"
@@ -144,8 +152,10 @@ rule ancestral:
             --alignment {input.alignment} \
             --output-node-data {output.node_data} \
             --output-sequences {output.sequences}\
-            --inference {params.inference}
+            --inference {params.inference}\
+            --root-sequence {input.reference} \
         """
+
 
 rule translate:
     message: "Translating amino acid sequences"
@@ -164,8 +174,27 @@ rule translate:
             --output {output.node_data} \
         """
 
+rule clades:
+    message: "Assigning clades using augur clades"
+    input:
+        tree = rules.refine.output.tree,
+        aa_muts = rules.translate.output.node_data,
+        nuc_muts = rules.ancestral.output.node_data,
+        clades = clades
+    output:
+        node_data = "results/clades.json"
+    shell:
+        """
+        augur clades \
+            --tree {input.tree} \
+            --mutations {input.nuc_muts} {input.aa_muts} \
+            --clades {input.clades} \
+            --output-node-data {output.node_data} \
+        """
+
+
 rule export:
-    message: "Exporting data files fo auspice"
+    message: "Exporting data files for auspice"
     input:
         tree = rules.refine.output.tree,
         metadata = input_metadata,
@@ -173,9 +202,10 @@ rule export:
         traits = rules.traits.output.traits,
         nt_muts = rules.ancestral.output.node_data,
         aa_muts = rules.translate.output.node_data,
+        clades = rules.clades.output.node_data,
         description = description,
         lat_longs = lat_longs,
-        colors= colors,
+        colors = colors,
         auspice_config = auspice_config
     output:
         auspice = rules.all.input.auspice,
@@ -184,10 +214,10 @@ rule export:
         augur export v2 \
             --tree {input.tree} \
             --metadata {input.metadata} \
-            --node-data {input.branch_lengths} {input.traits} {input.nt_muts} {input.aa_muts} \
+            --node-data {input.branch_lengths} {input.traits} {input.nt_muts} {input.aa_muts} {input.clades} \
             --lat-longs {input.lat_longs} \
             --colors {input.colors} \
             --auspice-config {input.auspice_config} \
             --description {input.description} \
-            --output {output.auspice} \
+            --output {output.auspice}
         """
