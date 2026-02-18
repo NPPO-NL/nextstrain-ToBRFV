@@ -1,6 +1,6 @@
 rule all:
     input:
-        auspice = "auspice/ToBRFV_20250804-internal.json"
+        auspice = "auspice/ToBRFV_20250804.json"
 
 input_fasta = "data/ToBRFV_20250804.fa",
 input_metadata = "data/meta_ToBRFV_20250804.tsv",
